@@ -206,9 +206,6 @@ class Chapter5PopulationScriptTests(TestCase):
         categories = Category.objects.filter()
         categories_len = len(categories)
         categories_strs = map(str, categories)
-
-        response = self.client.get('/admin/rango/category/')
-        response_body = response.content.decode()
         
         self.assertEqual(categories_len, 3, f"{FAILURE_HEADER}Expecting 3 categories to be created from the populate_rango module; found {categories_len}.{FAILURE_FOOTER}")
         self.assertTrue('Python' in categories_strs, f"{FAILURE_HEADER}The category 'Python' was expected but not created by populate_rango.{FAILURE_FOOTER}")
