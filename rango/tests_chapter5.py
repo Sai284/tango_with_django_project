@@ -167,7 +167,7 @@ class Chapter5AdminInterfaceTests(TestCase):
         """
         response = self.client.get('/admin/rango/page/')
         response_body = response.content.decode()
-        
+        print(response_body)
         # Headers -- are they all present?
         self.assertTrue('<div class="text"><a href="?o=1">Title</a></div>' in response_body, f"{FAILURE_HEADER}The 'Title' column could not be found in the admin interface for the Page model -- if it is present, is it in the correct order?{FAILURE_FOOTER}")
         self.assertTrue('<div class="text"><a href="?o=2">Category</a></div>' in response_body, f"{FAILURE_HEADER}The 'Category' column could not be found in the admin interface for the Page model -- if it is present, is it in the correct order?{FAILURE_FOOTER}")
